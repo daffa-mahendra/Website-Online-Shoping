@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Cambria, sans-serif;
+      background-color: rgb(225, 210, 198, 0.8)
+    }
+    .container {
+      max-width: 520px;
+      margin: 18px auto;
+      padding: 29px;
+      background-color:rgb(209, 190, 176, 0.8);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(255, 120, 10, 0.3);
+     }
+    h2 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: rgb(163, 130, 103);
+      color: #FFF;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .back-btn {
+      text-align: center;
+    }
+    .button {
+      display: inline-block;
+      background-color: rgb(163, 130, 103);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .button:hover {
+      background-color: #333;
+    }
+
+    marquee{
+      font-size: 21px;
+    }
+  </style>
+</head>
+<body>
+  <marquee behavior="alternate"  direction="rights">Thank You for Your Order <3 </marquee>
+  <div class="container">
+    <h2>Invoice</h2>
+    <table>
+      <tr>
+        <th>Description</th>
+        <th>Detail</th>
+      </tr>
+      <tr>
+        <td>Full Name :</td>
+        <td><span id="nama"></span></td>
+      </tr>
+      <tr>
+        <td>E-mail :</td>
+        <td><span id="email"></span></td>
+      </tr>
+      <tr>
+        <td>Product Name :</td>
+        <td><span id="produk"></span></td>
+      </tr>
+      <tr>
+        <td>Price per Piece:</td>
+        <td><span id="hargaProduk"></span></td>
+      </tr>
+      <tr>
+        <td>Amount :</td>
+        <td><span id="jumlah"></span></td>
+      </tr>
+      <tr>
+        <td>Total Price :</td>
+        <td><span id="totalHarga"></span></td>
+      </tr>
+      <tr>
+        <td>Address :</td>
+        <td><span id="keterangan"></span></td>
+      </tr>
+    </table>
+    <div class="back-btn">
+    </div><br>
+    <center style="background-color: none"><a style="text-decoration: none;color: #000000" href="form.html">- Back to Transaction Page -</a></button> </center>
+    <center style="background-color: none"><a style="text-decoration: none;color: #000000" href="index.html">- Home -</a></button> </center>
+
+
+
+    <script>
+      function getParameterByName(name) {
+        const url = new URL(window.location.href);
+        return url.searchParams.get(name);
+      }
+
+      function formatRupiah(angka) {
+        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(angka);
+      }
+
+      document.getElementById('nama').innerText = getParameterByName('nama');
+      document.getElementById('email').innerText = getParameterByName('email');
+      document.getElementById('produk').innerText = getParameterByName('produk');
+      document.getElementById('hargaProduk').innerText = formatRupiah(parseFloat(getParameterByName('produk')));
+      document.getElementById('jumlah').innerText = getParameterByName('jumlah');
+      const totalHarga = parseFloat(getParameterByName('produk')) * parseInt(getParameterByName('jumlah'));
+      document.getElementById('totalHarga').innerText = formatRupiah(totalHarga);
+      document.getElementById('keterangan').innerText = getParameterByName('keterangan');
+    </script>
+  </div>
+</body>
+</html>

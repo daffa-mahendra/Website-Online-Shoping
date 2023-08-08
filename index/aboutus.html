@@ -1,0 +1,234 @@
+
+
+<style>
+
+body {
+      font-family: Cambria, sans-serif;
+      background-color: rgb(225, 210, 198, 0.8)
+    }
+img{
+    width: 220px;
+    align-items: center;
+}
+
+.container{
+
+      max-width: 520px;
+      margin: 18px auto;
+      padding: 29px;
+      background-color:rgb(209, 190, 176, 0.8);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(255, 120, 10, 0.3);
+
+    }
+    .navbar {
+  margin-top: 20px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  margin-bottom: 70%;
+  width: 100%;
+  background-size: cover;
+  
+}
+
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 5px;
+}
+
+.navbar li:hover{
+  background-color: rgb(197, 197, 197);
+  color: rgba(63, 63, 63, 0.8) ;
+  border-radius: 10px;
+}
+
+
+.navbar li:visited{
+  background-color: rgb(197, 197, 197);
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+
+
+.blue-bg {
+  position: fixed;
+  background: url(../assets/headerp.jpg);
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  background-size: cover;
+  background-color: #58aff6;
+  top: 0;
+  object-fit: contain;
+  height: 620px;
+  width: 100vw;
+  z-index: -1;
+  overflow-x: hidden;
+}
+
+
+.contenth {
+  position: fixed;
+  top: 0;
+  margin: 250px 41.6vw;
+  max-width: 120vw;
+  background-color: transparent;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: ;
+}
+
+.shadow {
+  box-shadow: -2px -5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+/* ======================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #000000;
+    display: ;
+    place-content: center;
+}
+
+/* ======================== */
+.card {
+    width: 220px;
+    height: 250px;
+    perspective: 800px;
+    align-items: center;
+}
+
+.card__inner {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card:hover .card__inner {
+    transform: rotateY(180deg);
+}
+
+.card__body {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card__body--front {
+  margin-bottom: 10px;
+   
+}
+
+.card__body--back {
+    background-image: linear-gradient(60deg, rgb(171, 96, 21) 14%, rgba(211, 125, 81, 0.793) 57%, rgba(146, 135, 136, 0.897) 89%);
+    transform: rotateY(180deg);
+}
+
+p{
+  font-size: 12px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: rgba(225, 210, 198);
+}
+h2{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: rgba(225, 210, 198);
+}
+
+.img-social{
+  width: 10px;
+  height: 10px;
+  
+}
+
+
+</style>
+
+<header>
+    <div class="navbar">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produk1.html">Product</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+          </ul>
+        </nav>
+        </div>
+
+        
+    <div class="blue-bg"></div>
+    <div class="white-bg3 shadow"></div>
+    <div align="center" class="contenth">
+    
+          <article align="center" class="card">
+            <h2>Hover Me !!!</h2>
+              <div align="center" class="card__inner">
+                
+                <img class="card__body card__body--front"  src="../assets/dapa.JPG" width="200px" height="250px">
+                <p>Hover Me !</p>
+                  <div align="center" class="">
+                  
+                      <h2 class="card__title"></h2>
+                   
+                      
+                  
+                      
+                  </div>
+                  <div class="card__body card__body--back">
+                      <h2 class="card__title">Hello !!!</h2>
+                      <p>Name : Daffa Mahendra AL Harizts <br> Class : Information System 5 <br> NIM : 10522165 <br></p>
+                      <div class="img-social">
+                        
+                  
+                      </div>
+                      </div>
+              </div>
+          </article>
+          
+   </div>
+      </body>
+      
+      </html>
+
+    
+</header><br><br><br>
+
+  

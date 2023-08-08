@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+   
+   body {
+      font-family: Cambria, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color:rgba(225, 210, 198, 0.8);
+    }
+    .container-f {
+      max-width: 520px;
+      margin: 18px auto;
+      padding: 29px;
+      background-color:rgb(209, 190, 176, 0.8);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(255, 120, 10, 0.3);
+    }
+    h2 {
+      text-align: center;
+    }
+    form {
+      margin-top: 40px;
+    }
+    .form-group-f{
+      margin-bottom: 20px;
+      width: 495px;
+    }
+     .buttonf {
+      display: inline-block;
+      background-color: rgb(165, 119, 20);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      background-color: #d4cccc;
+      color: #bd5e5e;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    h2{
+    color: #fff ;
+    }
+
+</style>
+</head>
+<body>
+  <div class="container-f">
+    <h2>Transaction Input</h2>
+    <form>
+      <div class="form-group-f">
+        <label class="labelf" for="nama">Full Name :</label>
+        <input type="text" id="nama" name="nama" required>
+      </div>
+      <div class="form-group-f">
+        <label class="labelf" for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group-f">
+        <label for="produk">Product :</label>
+        <select id="produk" name="produk" onchange="updateHarga()" required>
+          <option value="">Choose Product </option>
+          <option value="80000 - Children Clothes A" >Children Clothes A</option>
+          <option value="85000 - Children Clothes B" >Children Clothes B</option>
+          <option value="250000 - Black Shirt" >Black Shirt</option>
+          <option value="250000 - White Shirt" >White Shirt</option>
+          <option value="320000 - Jaket Bommber" >Bomber Jacket</option>
+          <option value="300000 - Jaket Bommber" >Jumper Sweater</option>
+          <option value="">--- </option>
+          <option value="2100000 - Smart Watch" >Smart Watch</option>
+          <option value="4300000 - Mirrorless Camera" >Mirrorless Camera</option>
+          <option value="2500000 - Analog Camera" >Analog Camera</option>
+          <option value="5200000 - Smartphone" >Smartphone</option>
+          <option value="7100000 - Drone" >Drone</option>
+          <option value="15000000 - Laptop" >Laptop</option>
+        </select>
+        <span id="hargaProduk"></span>
+      </div><br>
+      <div class="form-group-f">
+        <label for="jumlah">Amount :</label>
+        <input type="number" id="jumlah" name="jumlah" required>
+      </div>
+      <div class="form-group-f">
+        <label for="keterangan">Addres :</label>
+        <textarea id="keterangan" name="keterangan" rows="4"></textarea>
+      </div>
+      <div class="form-group-f" style="text-align: center;">
+        <button type="button" onclick="redirectToKeranjang()" class="buttonf">Checkout</button> <br> <br>
+        <a href="produk1.html" style="color: #110;"> - Back -</a></button>
+      </div>
+    </form>
+    <script>
+      function updateHarga() {
+        const produk = document.getElementById('produk').value;
+        const hargaProduk = parseFloat(produk);
+        document.getElementById('hargaProduk').innerText = `Harga: IDR. ${hargaProduk.toLocaleString()}`;
+      }
+
+      function redirectToKeranjang() {
+        const nama = document.getElementById('nama').value;
+        const email = document.getElementById('email').value;
+        const produk = document.getElementById('produk').value;
+        const jumlah = document.getElementById('jumlah').value;
+        const keterangan = document.getElementById('keterangan').value;
+        const url = `invoice.html?nama=${encodeURIComponent(nama)}&email=${encodeURIComponent(email)}&produk=${encodeURIComponent(produk)}&jumlah=${encodeURIComponent(jumlah)}&keterangan=${encodeURIComponent(keterangan)}`;
+        window.location.href = url;
+      }
+    </script>
+  </div>
+</body>
+</html>
